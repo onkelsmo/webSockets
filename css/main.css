@@ -1,0 +1,41 @@
+@CHARSET "ISO-8859-1";
+.chatWrapper
+{
+	width: 500px;
+	margin-right: auto;
+	margin-left: auto;
+	background: #CCCCCC;
+	border: 1px solid #999999;
+	padding: 10px;
+	font: 12px 'lucida grande',tahoma,verdana,arial,sans-serif;
+}
+
+.chatWrapper .messageBox
+{
+	background: #FFFFFF;
+	height: 150px;
+	overflow: auto;
+	padding: 10px;
+	border: 1px solid #999999;
+}
+
+.chatWrapper .panel input
+{
+	padding: 2px 2px 2px 5px:
+}
+
+.systemMessage
+{
+	color: #BDBDBD;
+	font-style: italic;
+}
+
+.userName
+{
+	font-weight: bold;
+}
+
+.userMessage
+{
+	color: #88B6E0;
+}

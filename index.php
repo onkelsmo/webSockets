@@ -16,5 +16,16 @@
 		<title>Testing Websockets</title>
 		<script type="text/javascript" src="js/jQuery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="js/websocket.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
 	</head>
+	<body>
+		<div class="chatWrapper">
+			<div class="messageBox" id="messageBox"></div>
+			<div class="panel">
+				<input type="text" name="name" id="name" placeholder="You Name" maxlength="10" />
+				<input type="text" name="message" id="message" placeholder="Message" maxlength="80" />
+				<button id="sendBtn">Send</button>
+			</div>
+		</div>
+	</body>
 </html>
