@@ -10,31 +10,38 @@
 $(document).ready(function()
 {
 	// open a connection
-	var wsUri = "ws://localhost:9000/daemon.php";
+	var wsUri = "ws://localhost:9000/websocket/server.php";
 	websocket = new WebSocket(wsUri);
 	
 	// connect to a server
 	websocket.onopen = function(ev)
 	{
-		alert("Connected to Server");
+		console.log("Connected to Server");
 	};
 	
 	// close the connection
 	websocket.onclose = function(ev)
 	{
-		alert("Connection closed");
+		console.log("Connection closed");
 	};
 	
 	// message received
 	websocket.onmessage = function(ev)
 	{
-		alert("Message " + ev.data);
+		console.log("Message " + ev.data);
 	};
 	
 	// error
 	websocket.onerror = function(ev)
 	{
-		alert("Error " + ev.data);
+		console.log("Error " + ev.data);
 	};
+	
+	// send a message
+	$('#send').click(function()
+	{
+		var myMessage = 'This is a test message';
+		websocket.send(myMessage);
+	});
 	
 });
