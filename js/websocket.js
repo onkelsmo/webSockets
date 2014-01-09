@@ -42,7 +42,7 @@ $(document).ready(function()
 		{
 				message: myMessage,
 				name: myName,
-				color: '<?php echo $colours[$user_colour]; ?>'
+				color: '<?php echo $userColour; ?>'
 		};
 		
 		// convert and send data to server
@@ -58,15 +58,17 @@ $(document).ready(function()
 		var uname = msg.name;
 		var ucolor = msg.color;
 		
+		console.log(uname);
+		
 		if (type == 'usermsg')
 		{
 			$('#messageBox').append
 			(
 				'<div><span class="userName" style="color:#' 
 				+ ucolor +
-				'>' 
+				';">' 
 				+ uname +
-				'</span>:<span class="userMessage">' 
+				'</span>: <span class="userMessage">' 
 				+ umsg + 
 				'</span></div>'
 			);
@@ -82,7 +84,7 @@ $(document).ready(function()
 		}
 		
 		//console.log("Message " + ev.data);
-		$('#message')val('');
+		$('#message').val('');
 	};
 
 	websocket.onerror = function(ev)
