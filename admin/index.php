@@ -14,29 +14,25 @@ $run = false;
 if (isset($_POST))
 {
 	$post = $_POST;
+	
 	if (isset($post['Start']))
 	{
-		$run = true;
+		$run = true;		
 	}	
 	else if (isset($post['Stop']))
-	{
+	{	
 		$run = false;
-	}
-	else 
-	{
-		exit;
 	}
 }
 
-
-
-
-	
-
 if ($run === true)
 {
-	$output = shell_exec('php -q c:\xampp\htdocs\webSockets\server.php');
-	dump($output);
+	//$output = shell_exec(addslashes("php -q /var/www/webSockets/server.php"));
+	exec(addslashes("php -q /var/www/webSockets/server.php start"));
+}
+else 
+{
+	exec(addslashes("php -q /var/www/webSockets/server.php stop"));
 }
 ?>
 <!DOCTYPE html>
@@ -54,3 +50,4 @@ if ($run === true)
 		</form>
 	</body>
 </html>
+
