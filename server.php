@@ -1,7 +1,7 @@
 <?php
-switch ($argv[1])
-{
-	case 'start':
+// switch ($argv[1])
+// {
+// 	case 'start':
 		
 		$host = 'localhost'; //host
 		$port = '9000'; //port
@@ -154,16 +154,16 @@ switch ($argv[1])
 			socket_write($client_conn,$upgrade,strlen($upgrade));
 		}
 		
-		break;
-	case 'stop':
-		echo "stop";
-		exit;
-		break;
-	default:
-		echo "wrong parameter";
-		exit;
-		break;
-}
+// 		break;
+// 	case 'stop':
+// 		echo "stop";
+// 		exit;
+// 		break;
+// 	default:
+// 		echo "wrong parameter";
+// 		exit;
+// 		break;
+// }
 
 /*
 $host = 'localhost'; //host
