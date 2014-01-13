@@ -21,6 +21,8 @@
 		//create & add listning socket to the list
 		$clients = array($socket);
 		
+		$clientArray = array();
+		
 		//start endless loop, so that our script doesn't stop
 		while (true) {
 			//manage multipal connections
@@ -45,7 +47,7 @@
 				unset($changed[$found_socket]);
 			}
 		
-			$clientArray = array();
+			
 			
 			//loop through all connected sockets
 			foreach ($changed as $changed_socket) 
