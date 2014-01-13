@@ -24,38 +24,54 @@ $(document).ready(function()
 		console.log("Connected to Server");
 	};
 	
-	// send a message
+	// send a message by click on send button
 	$('#sendBtn').click(function()
 	{
-		var myMessage = $('#message').val();
-		var myName = $('#name').val();
-		
-		if (myName == "")
-		{
-			alert("Enter your Name first");
-			return;
-		}
-		if (myMessage == "")
-		{
-			alert("Enter some message to chat");
-			return;
-		}
-				
-	   var unixTimeStamp = $.now();
-	   var time = new Date(unixTimeStamp);
-	   time = time.toLocaleTimeString();
-	   				
-		// prepare json data
-		var msg = 
-		{
-		    time: time,    
-			message: myMessage,
-			name: myName,
-			color: color
-		};
-		// convert and send data to server
-		websocket.send(JSON.stringify(msg));
+		send();
 	});
+
+    // send a message by press the enter key	
+	$('#message').keypress(function(event)
+	{
+	    if (event.which == 13)
+	    {
+	        event.preventDefault();
+	        send();
+	    };
+	});
+	
+	var send = function()
+	{
+	    var myMessage = $('#message').val();
+        var myName = $('#name').val();
+    
+        if (myName == "")
+        {
+            alert("Enter your Name first");
+            return;
+        }
+        if (myMessage == "")
+        {
+            alert("Enter some message to chat");
+            return;
+        }
+            
+        var unixTimeStamp = $.now();
+        var time = new Date(unixTimeStamp);
+        time = time.toLocaleTimeString();
+                
+        // prepare json data
+        var msg = 
+        {
+            time: time,    
+            message: myMessage,
+            name: myName,
+            color: color
+        };
+        
+        // convert and send data to server
+        websocket.send(JSON.stringify(msg));
+	}
 	
 	// message received
 	websocket.onmessage = function(ev)
