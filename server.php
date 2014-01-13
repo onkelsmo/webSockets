@@ -45,21 +45,24 @@
 				unset($changed[$found_socket]);
 			}
 		
+			$clientArray = array();
+			
 			//loop through all connected sockets
-			foreach ($changed as $changed_socket) {
-		
+			foreach ($changed as $changed_socket) 
+			{
 				//check for any incomming data
 				while(socket_recv($changed_socket, $buf, 1024, 0) >= 1)
 				{
 					$received_text = unmask($buf); //unmask data
 					$tst_msg = json_decode($received_text); //json decode
 					$user_name = $tst_msg->name; //sender name
+					$clientArray[] = $tst_msg->name;
 					$user_message = $tst_msg->message; //message text
 					$user_color = $tst_msg->color; //color
 					$user_time = $tst_msg->time;
 		
 					//prepare data to be sent to client
-					$response_text = mask(json_encode(array('type'=>'usermsg', 'name'=>$user_name, 'message'=>$user_message, 'color'=>$user_color, 'time'=>$user_time)));
+					$response_text = mask(json_encode(array('type'=>'usermsg', 'name'=>$user_name, 'message'=>$user_message, 'color'=>$user_color, 'time'=>$user_time, 'clients'=>$clientArray)));
 					send_message($response_text); //send data
 					break 2; //exist this loop
 				}

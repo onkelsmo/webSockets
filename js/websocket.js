@@ -71,12 +71,14 @@ $(document).ready(function()
         
         // convert and send data to server
         websocket.send(JSON.stringify(msg));
-	}
+	};
 	
 	// message received
 	websocket.onmessage = function(ev)
 	{	   
+	    
 		var msg = JSON.parse(ev.data);
+	    console.log(msg);
 	    var time = msg.time;
 		var type = msg.type;
 		var umsg = msg.message;
