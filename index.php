@@ -19,10 +19,6 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 	</head>
 	<body>
-		<?php 
-			$colours = array('007AFF','FF7000','FF7000','15E25F','CFC700','CFC700','CF1100','CF00BE','F00');
-			$userColour = array_rand($colours);
-		?>
 		<div class="chatWrapper">
 			<div class="messageBox" id="messageBox"></div>
 			<div class="panel">

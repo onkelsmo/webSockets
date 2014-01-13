@@ -14,6 +14,9 @@ $(document).ready(function()
 	var wsUri = "ws://home:9000/webSockets/server.php";
 	websocket = new WebSocket(wsUri);
 	
+	var colours = ['007AFF','FF7000','FF7000','15E25F','CFC700','CFC700','CF1100','CF00BE','F00'];
+    var color = colours[Math.floor(Math.random()*colours.length)];
+	
 	// connect to a server
 	websocket.onopen = function(ev)
 	{
@@ -43,16 +46,16 @@ $(document).ready(function()
 		{
 				message: myMessage,
 				name: myName,
-				color: '<?php echo $userColour; ?>'
+				color: color
 		};
-		
+				
 		// convert and send data to server
 		websocket.send(JSON.stringify(msg));
 	});
 	
 	// message received
 	websocket.onmessage = function(ev)
-	{
+	{	    
 		var msg = JSON.parse(ev.data);
 		var type = msg.type;
 		var umsg = msg.message;
@@ -63,7 +66,7 @@ $(document).ready(function()
 		{
 			$('#messageBox').append
 			(
-				'<div><span class="userName" style="color:#' 
+                '<div><span class="userName" style="color:#'
 				+ ucolor +
 				';">' 
 				+ uname +
