@@ -53,7 +53,6 @@ $(document).ready(function()
 			name: myName,
 			color: color
 		};
-		
 		// convert and send data to server
 		websocket.send(JSON.stringify(msg));
 	});
@@ -61,8 +60,6 @@ $(document).ready(function()
 	// message received
 	websocket.onmessage = function(ev)
 	{	   
-	    console.log(ev);     
-		
 		var msg = JSON.parse(ev.data);
 	    var time = msg.time;
 		var type = msg.type;
@@ -70,14 +67,15 @@ $(document).ready(function()
 		var uname = msg.name;
 		var ucolor = msg.color;
 		
-				
 		if (type == 'usermsg')
 		{
 			$('#messageBox').append
 			(	    
-                '<div><span class="time">'
+                '<div><a name="'
+                + time + 
+                '"<span class="time">'
                 + time +
-                '</span><span class="userName" style="color:#'
+                '</span> <span class="userName" style="color:#'
 				+ ucolor +
 				';">' 
 				+ uname +
@@ -96,6 +94,12 @@ $(document).ready(function()
 			);
 		}
 		
+		// scroll #messageBox to bottom
+		$('#messageBox').animate(
+		{
+            scrollTop: $('#messageBox')[0].scrollHeight
+        }, 2000);
+        
 		//console.log("Message " + ev.data);
 		$('#message').val('');
 	};
