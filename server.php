@@ -56,9 +56,10 @@
 					$user_name = $tst_msg->name; //sender name
 					$user_message = $tst_msg->message; //message text
 					$user_color = $tst_msg->color; //color
+					$user_time = $tst_msg->time;
 		
 					//prepare data to be sent to client
-					$response_text = mask(json_encode(array('type'=>'usermsg', 'name'=>$user_name, 'message'=>$user_message, 'color'=>$user_color)));
+					$response_text = mask(json_encode(array('type'=>'usermsg', 'name'=>$user_name, 'message'=>$user_message, 'color'=>$user_color, 'time'=>$user_time)));
 					send_message($response_text); //send data
 					break 2; //exist this loop
 				}

@@ -40,33 +40,44 @@ $(document).ready(function()
 			alert("Enter some message to chat");
 			return;
 		}
-		
+				
+	   var unixTimeStamp = $.now();
+	   var time = new Date(unixTimeStamp);
+	   time = time.toLocaleTimeString();
+	   				
 		// prepare json data
 		var msg = 
 		{
-				message: myMessage,
-				name: myName,
-				color: color
+		    time: time,    
+			message: myMessage,
+			name: myName,
+			color: color
 		};
-				
+		
 		// convert and send data to server
 		websocket.send(JSON.stringify(msg));
 	});
 	
 	// message received
 	websocket.onmessage = function(ev)
-	{	    
+	{	   
+	    console.log(ev);     
+		
 		var msg = JSON.parse(ev.data);
+	    var time = msg.time;
 		var type = msg.type;
 		var umsg = msg.message;
 		var uname = msg.name;
 		var ucolor = msg.color;
+		
 				
 		if (type == 'usermsg')
 		{
 			$('#messageBox').append
-			(
-                '<div><span class="userName" style="color:#'
+			(	    
+                '<div><span class="time">'
+                + time +
+                '</span><span class="userName" style="color:#'
 				+ ucolor +
 				';">' 
 				+ uname +
