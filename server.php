@@ -61,7 +61,7 @@
 					$user_color = $tst_msg->color; //color
 					$user_time = $tst_msg->time;
 					
-					$clientArray[$id] = $tst_msg->name;
+					$clientArray[$ip] = $tst_msg->name;
 					$clientArray = array_unique($clientArray);
 					
 					//prepare data to be sent to client
