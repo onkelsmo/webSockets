@@ -19,6 +19,11 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 	</head>
 	<body>
+		<div class="clientList">
+			<div class="clientListHeader">Active Clients</div>
+			<hr />
+			<div class="list" id="list"></div>
+		</div>
 		<div class="chatWrapper">
 			<div class="messageBox" id="messageBox"></div>
 			<div class="panel">

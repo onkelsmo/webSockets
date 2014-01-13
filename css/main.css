@@ -1,4 +1,33 @@
 @CHARSET "ISO-8859-1";
+.clientList
+{
+	float: left;
+	width: 100px;
+	margin-right: auto;
+	margin-left: auto;
+	background: #CCCCCC;
+	border: 1px solid #999999;
+	padding: 10px;
+	font: 12px 'lucida grande',tahoma,verdana,arial,sans-serif;
+}
+
+.clientList .clientListHeader 
+{
+	background: #FFFFFF;
+	overflow: auto;
+	padding: 10px;
+	border: 1px solid #999999;
+}
+
+.clientList .list 
+{
+	background: #FFFFFF;
+	height: 150px;
+	overflow: auto;
+	padding: 10px;
+	border: 1px solid #999999;
+}
+
 .chatWrapper
 {
 	width: 500px;

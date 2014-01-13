@@ -21,6 +21,7 @@
 		//create & add listning socket to the list
 		$clients = array($socket);
 		
+		// establish clientsArray to hold all active client names
 		$clientArray = array();
 		
 		//start endless loop, so that our script doesn't stop
@@ -47,8 +48,6 @@
 				unset($changed[$found_socket]);
 			}
 		
-			
-			
 			//loop through all connected sockets
 			foreach ($changed as $changed_socket) 
 			{
@@ -58,11 +57,13 @@
 					$received_text = unmask($buf); //unmask data
 					$tst_msg = json_decode($received_text); //json decode
 					$user_name = $tst_msg->name; //sender name
-					$clientArray[] = $tst_msg->name;
 					$user_message = $tst_msg->message; //message text
 					$user_color = $tst_msg->color; //color
 					$user_time = $tst_msg->time;
-		
+					
+					$clientArray[] = $tst_msg->name;
+					$clientArray = array_unique($clientArray);
+					
 					//prepare data to be sent to client
 					$response_text = mask(json_encode(array('type'=>'usermsg', 'name'=>$user_name, 'message'=>$user_message, 'color'=>$user_color, 'time'=>$user_time, 'clients'=>$clientArray)));
 					send_message($response_text); //send data

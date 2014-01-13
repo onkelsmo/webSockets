@@ -78,15 +78,17 @@ $(document).ready(function()
 	{	   
 	    
 		var msg = JSON.parse(ev.data);
-	    console.log(msg);
 	    var time = msg.time;
 		var type = msg.type;
 		var umsg = msg.message;
 		var uname = msg.name;
 		var ucolor = msg.color;
+		var clients = msg.clients;
 		
 		if (type == 'usermsg')
 		{
+		    console.log(clients);
+		    
 			$('#messageBox').append
 			(	    
                 '<div><a name="'
