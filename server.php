@@ -152,7 +152,7 @@
 					//"WebSocket-Location: ws://$host:$port/webSockets/server.php\r\n".
 			"Sec-WebSocket-Accept:$secAccept\r\n\r\n";
 			socket_write($client_conn,$upgrade,strlen($upgrade));
-		}
+ 		}
 		
 // 		break;
 // 	case 'stop':
