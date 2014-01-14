@@ -56,9 +56,6 @@
 				{
 					$received_text = unmask($buf); //unmask data
 					$tst_msg = json_decode($received_text); //json decode
-					
-					var_dump($tst_msg);
-					
 					$user_name = $tst_msg->name; //sender name
 					$user_message = $tst_msg->message; //message text
 					$user_color = $tst_msg->color; //color

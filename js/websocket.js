@@ -85,16 +85,21 @@ $(document).ready(function()
 		var clients = msg.clients;
 		
 		//console.log(clients);
-		$.each(clients, function ( key, value)
-		{
-		    console.log(key + ": " + value);
-		});
 		
+		$('#list').empty();
+		
+	    $.each(clients, function (key, value)
+        { 
+            $('#list').append
+            (
+                '<div>'
+                + key +
+                '</div>'
+            );
+	    });
 		
 		if (type == 'usermsg')
 		{
-		    
-		    
 		    $('#messageBox').append
 			(	    
                 '<div><a name="'
