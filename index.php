@@ -26,8 +26,9 @@
 		</div>
 		<div class="chatWrapper">
 			<div class="messageBox" id="messageBox"></div>
+			<hr />
 			<div class="panel">
-				<input type="text" name="name" id="name" placeholder="You Name" maxlength="10" />
+				<input type="text" name="name" id="name" placeholder="You Name" maxlength="6" />
 				<input type="text" name="message" id="message" placeholder="Message" maxlength="80" />
 				<button id="sendBtn">Send</button>
 			</div>

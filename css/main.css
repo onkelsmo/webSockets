@@ -1,4 +1,10 @@
 @CHARSET "ISO-8859-1";
+body
+{
+	margin: auto;
+	margin-top: 15px;
+	width: 660px;
+}
 .clientList
 {
 	float: left;
@@ -30,9 +36,8 @@
 
 .chatWrapper
 {
+	float: right;
 	width: 500px;
-	margin-right: auto;
-	margin-left: auto;
 	background: #CCCCCC;
 	border: 1px solid #999999;
 	padding: 10px;
@@ -48,9 +53,30 @@
 	border: 1px solid #999999;
 }
 
+.chatWrapper .panel
+{
+	padding: 10px 0 0 0;
+}
+
 .chatWrapper .panel input
 {
 	padding: 2px 2px 2px 5px:
+	border: 1px solid #999999;
+}
+
+.chatWrapper .panel #name
+{
+	width: 100px;
+}
+
+.chatWrapper .panel #message
+{
+	width: 300px;
+}
+
+.chatWrapper .panel #sendBtn
+{
+	width: 80px;
 }
 
 .systemMessage
