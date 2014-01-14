@@ -51,6 +51,8 @@
 			//loop through all connected sockets
 			foreach ($changed as $changed_socket) 
 			{
+				var_dump($changed_socket);
+				
 				//check for any incomming data
 				while(socket_recv($changed_socket, $buf, 1024, 0) >= 1)
 				{
@@ -62,7 +64,7 @@
 					$user_time = $tst_msg->time;
 					
 					$clientArray[$ip] = $tst_msg->name;
-					$clientArray = array_unique($clientArray);
+					//$clientArray = array_unique($clientArray);
 					
 					//prepare data to be sent to client
 					$response_text = mask(json_encode(array('type'=>'usermsg', 'name'=>$user_name, 'message'=>$user_message, 'color'=>$user_color, 'time'=>$user_time, 'clients'=>$clientArray)));

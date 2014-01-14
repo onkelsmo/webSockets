@@ -75,8 +75,7 @@ $(document).ready(function()
 	
 	// message received
 	websocket.onmessage = function(ev)
-	{	   
-	    
+	{
 		var msg = JSON.parse(ev.data);
 	    var time = msg.time;
 		var type = msg.type;
@@ -85,11 +84,18 @@ $(document).ready(function()
 		var ucolor = msg.color;
 		var clients = msg.clients;
 		
+		//console.log(clients);
+		$.each(clients, function ( key, value)
+		{
+		    console.log(key + ": " + value);
+		});
+		
+		
 		if (type == 'usermsg')
 		{
-		    console.log(clients);
 		    
-			$('#messageBox').append
+		    
+		    $('#messageBox').append
 			(	    
                 '<div><a name="'
                 + time + 
@@ -124,7 +130,7 @@ $(document).ready(function()
 		$('#message').val('');
 	};
 
-	websocket.onerror = function(ev)
+  	websocket.onerror = function(ev)
 	{
 		//console.log("Error " + ev.data);
 		$('#messageBox').append
