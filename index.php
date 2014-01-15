@@ -16,25 +16,35 @@
 		<title>Testing Websockets</title>
 		<script type="text/javascript" src="js/jQuery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="js/websocket.js"></script>
+		
+		<!-- switch between templates -->
+		<script type="text/javascript">
+			$(window).load(function() {
+			    var windowSize = $(window).width();
+			      if (windowSize <= 767) {
+			            $('body').load('templates/mobileIndex.php');
+			        }
+			        // just for the use of a tablet pc
+			        /*
+			        else if (windowSize <= 979) {
+			           $('#block1').load('block1_pad.html');     
+			        }
+			        */
+			        else if (windowSize >= 980) {
+			           $('body').load('templates/desktopIndex.php');    
+			        }
+			});
+		</script>
+		
+		<!-- switch between stylesheets for different screen resolutions -->
+		<!--  
 		<link rel="stylesheet" type="text/css" href="css/main.css" 
 			media="screen and (min-width: 701px)" />
 		<link rel="stylesheet" type="text/css" href="css/mobile.css"
 			media="screen and (max-width: 700px)" />
+		-->
 	</head>
 	<body>
-		<div class="clientList">
-			<div class="clientListHeader">Active Clients</div>
-			<hr />
-			<div class="list" id="list"></div>
-		</div>
-		<div class="chatWrapper">
-			<div class="messageBox" id="messageBox"></div>
-			<hr />
-			<div class="panel">
-				<input type="text" name="name" id="name" placeholder="You Name" maxlength="10" />
-				<input type="text" name="message" id="message" placeholder="Message" maxlength="80" />
-				<button id="sendBtn">Send</button>
-			</div>
-		</div>
+		
 	</body>
 </html>
