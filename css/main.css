@@ -14,7 +14,7 @@ body
 	background: #CCCCCC;
 	border: 1px solid #999999;
 	padding: 10px;
-	font: 12px 'lucida grande',tahoma,verdana,arial,sans-serif;
+	font: 12px 'arial lucida grande',tahoma,verdana,arial,sans-serif;
 }
 
 .clientList .clientListHeader 
@@ -41,7 +41,7 @@ body
 	background: #CCCCCC;
 	border: 1px solid #999999;
 	padding: 10px;
-	font: 12px 'lucida grande',tahoma,verdana,arial,sans-serif;
+	font: 12px 'arial lucida grande',tahoma,verdana,arial,sans-serif;
 }
 
 .chatWrapper .messageBox
@@ -60,7 +60,7 @@ body
 
 .chatWrapper .panel input
 {
-	padding: 2px 2px 2px 5px:
+	padding: 2px 2px 2px 5px;
 	border: 1px solid #999999;
 }
 

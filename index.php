@@ -16,7 +16,10 @@
 		<title>Testing Websockets</title>
 		<script type="text/javascript" src="js/jQuery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="js/websocket.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" 
+			media="screen and (min-width: 701px)" />
+		<link rel="stylesheet" type="text/css" href="css/mobile.css"
+			media="screen and (max-width: 700px)" />
 	</head>
 	<body>
 		<div class="clientList">

@@ -1,0 +1,43 @@
+@CHARSET "ISO-8859-1";
+body
+{
+   	background: #CCCCCC;
+ }
+
+.clientList
+{
+	display: none;
+}
+
+.messageBox
+{
+	position: relative;
+	top: 18px;
+	background: #FFFFFF;
+	height: 80vh;
+	border: 1px solid #999999;
+	padding: 10px;
+	font: 12px 'arial lucida grande',tahoma,verdana,arial,sans-serif;
+}
+
+.chatWrapper .panel #name
+{
+	position: absolute;
+	top: 2px;
+	width: 95%;
+}
+
+.chatWrapper .panel #message
+{
+	position: relative;
+	top: 5px;
+	width: 98%;
+}
+
+.chatWrapper .panel #sendBtn
+{
+	position: relative;
+	top: 15px;
+	width: 98%;
+}
+
