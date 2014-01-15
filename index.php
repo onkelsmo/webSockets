@@ -14,7 +14,9 @@
 <html>
 	<head>
 		<title>Testing Websockets</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="text/javascript" src="js/jQuery-1.10.2.min.js"></script>
+		<script type="text/javascript" src="js/jQuery.mobile-1.4.0.min.js"></script>
 		<script type="text/javascript" src="js/websocket.js"></script>
 		
 		<!-- switch between templates -->
@@ -30,13 +32,13 @@
 			           $('#block1').load('block1_pad.html');     
 			        }
 			        */
-			        else if (windowSize >= 980) {
+			        else if (windowSize >= 767) {
 			           $('body').load('templates/desktopIndex.php');    
 			        }
 			});
 		</script>
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
-		
+		<link rel="stylesheet" type="text/css" href="css/jQuery.mobile-1.4.0.min.css" />		
 		<!-- switch between stylesheets for different screen resolutions -->
 		<!--  
 		<link rel="stylesheet" type="text/css" href="css/main.css" 
