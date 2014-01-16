@@ -18,9 +18,9 @@
 	<script type="text/javascript" src="js/websocket.js"></script>
 	<!-- switch between stylesheets for different screen resolutions -->
 	<link rel="stylesheet" type="text/css" href="css/main.css" 
-			media="screen and (min-width: 701px)" />
+			media="screen and (min-width: 501px)" />
 	<link rel="stylesheet" type="text/css" href="css/mobile.css"
-			media="screen and (max-width: 700px)" />
+			media="screen and (max-width: 500px)" />
 	
 	<!-- switching templates
 	<script type="text/javascript">

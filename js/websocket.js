@@ -11,7 +11,7 @@ $(document).ready(function()
 {
 	// open a connection
 	//var wsUri = "ws://localhost:9000/webSockets/server.php";
-	var wsUri = "ws://onkelsmo.no-ip.biz:9000/webSockets/server.php";
+	//var wsUri = "ws://onkelsmo.no-ip.biz:9000/webSockets/server.php";
 	var wsUri = "ws://home:9000/webSockets/server.php";
 	
 	websocket = new WebSocket(wsUri);
