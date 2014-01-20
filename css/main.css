@@ -71,12 +71,13 @@ body
 
 .chatWrapper .panel #message
 {
-	width: 300px;
+	width: 295px;
 }
 
 .chatWrapper .panel #sendBtn
 {
 	width: 80px;
+	float: right;
 }
 
 .systemMessage
@@ -93,4 +94,9 @@ body
 .userMessage
 {
 	color: #88B6E0;
+}
+
+#host
+{
+	width: 410px;
 }

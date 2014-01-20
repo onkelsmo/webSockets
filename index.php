@@ -51,10 +51,13 @@
 		<div class="list" id="list"></div>
 	</div>
 	<div class="chatWrapper">
+		<input type="text" name="host" id="host" placeholder="Host" maxlength="80" />
+		<button id="connectBtn">Connect</button>
+		<hr />
 		<div class="messageBox" id="messageBox"></div>
 		<hr />
 		<div class="panel">
-			<input type="text" name="name" id="name" placeholder="You Name" maxlength="10" />
+			<input type="text" name="name" id="name" placeholder="Name" maxlength="10" />
 			<input type="text" name="message" id="message" placeholder="Message" maxlength="80" />
 			<button id="sendBtn">Send</button>
 		</div>
