@@ -13,7 +13,8 @@ $(document).ready(function()
 	//var wsUri = "ws://localhost:9000/webSockets/server.php";
 	//var wsUri = "ws://onkelsmo.no-ip.biz:9000/webSockets/server.php";
 	//var wsUri = "ws://home:9000/webSockets/server.php";
-	//websocket = new WebSocket(wsUri);
+	
+	var websocket = null;
 	
 	var colours = ['007AFF','FF7000','FF7000','15E25F','CFC700','CFC700','CF1100','CF00BE','F00'];
     var color = colours[Math.floor(Math.random()*colours.length)];
@@ -45,17 +46,17 @@ $(document).ready(function()
 				
 		if (host != 'Host' && host != '')
 		{
-			websocket = new WebSocket(host);
+			this.websocket = new WebSocket(host);
 			
 			// connect to a server
-			websocket.onopen = function(ev)
+			this.websocket.onopen = function(ev)
 			{
 				$('#messageBox').append('<div class="systemMessage">Connected!</div>');
 				console.log("Connected to Server");
 			};
 			
 			// message received
-			websocket.onmessage = function(ev)
+			this.websocket.onmessage = function(ev)
 			{
 				var msg = JSON.parse(ev.data);
 			    var time = msg.time;
@@ -116,7 +117,7 @@ $(document).ready(function()
 				$('#message').val('');
 			};
 
-		  	websocket.onerror = function(ev)
+			this.websocket.onerror = function(ev)
 			{
 				//console.log("Error " + ev.data);
 				$('#messageBox').append
@@ -126,7 +127,7 @@ $(document).ready(function()
 						"</div>"
 						);
 				}; 
-			websocket.onclose = function(ev)
+			this.websocket.onclose = function(ev)
 			{
 				console.log("Connection closed");
 				$('#message_box').append
@@ -135,6 +136,8 @@ $(document).ready(function()
 				);
 			}; 
 		}
+		
+		
 	};
 	
 	var send = function()
@@ -167,8 +170,6 @@ $(document).ready(function()
         };
         
         // convert and send data to server
-        websocket.send(JSON.stringify(msg));
+        this.websocket.send(JSON.stringify(msg));
 	};
-	
-		
 });
