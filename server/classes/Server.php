@@ -17,21 +17,30 @@ class Server
 	
 	public function __construct()
 	{
-		//Create TCP/IP sream socket
-		$this->socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
-		//reuseable port
-		socket_set_option($this->socket, SOL_SOCKET, SO_REUSEADDR, 1);
-		//bind socket to specified host
-		socket_bind($this->socket, 0, $this->port);
-		//listen to port
-		socket_listen($this->socket);
-		//add listning socket to the list
-		$this->clients[] = $this->socket;
+		try 
+		{
+			//Create TCP/IP sream socket
+			$this->socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+			//reuseable port
+			socket_set_option($this->socket, SOL_SOCKET, SO_REUSEADDR, 1);
+			//bind socket to specified host
+			socket_bind($this->socket, 0, $this->port);
+			//listen to port
+			socket_listen($this->socket);
+			//add listning socket to the list
+			$this->clients[] = $this->socket;
+			
+			echo "[Info]socket created\n";
+		}
+		catch (Exception $e)
+		{
+			echo "[Error]" . $e->getMessage();
+		}
 	}
 	
 	public function start()
 	{
-		echo "Server startet!\n";
+		echo "[Info]server startet!\n";
 		//start endless loop, so that our script doesn't stop
 		while (true) 
 		{
@@ -100,6 +109,7 @@ class Server
 		}
 		
 		// close the listening socket
+		echo "[Info]connection closed\n";
 		socket_close($sock);
 	}
 	
