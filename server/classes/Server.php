@@ -36,9 +36,9 @@ class Server
 		while (true) 
 		{
 			//manage multipal connections
-			$changed = $clients;
+			$changed = $this->clients;
 			//returns the socket resources in $changed array
-			socket_select($changed, $null, $null, 0, 10);
+			socket_select($changed, $this->null, $this->null, 0, 10);
 		
 			//check for new socket
 			if (in_array($this->socket, $changed)) {
