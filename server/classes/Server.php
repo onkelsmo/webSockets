@@ -65,6 +65,12 @@ class Server
 				{
 					$received_text = $this->unmask($buf); //unmask data
 					$tst_msg = json_decode($received_text); //json decode
+					
+					if ($tst_msg == null)
+					{
+						continue;
+					}
+					
 					$user_name = $tst_msg->name; //sender name
 					$user_message = $tst_msg->message; //message text
 					$user_color = $tst_msg->color; //color
