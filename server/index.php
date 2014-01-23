@@ -7,7 +7,7 @@
 * @since 23.01.2014
 *
 **/
-include '/classes/Server.php';
+require 'classes/Server.php';
 
 $server = new Server();
 
