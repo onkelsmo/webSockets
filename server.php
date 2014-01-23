@@ -25,7 +25,8 @@
 		$clientArray = array();
 		
 		//start endless loop, so that our script doesn't stop
-		while (true) {
+		while (true) 
+		{
 			//manage multipal connections
 			$changed = $clients;
 			//returns the socket resources in $changed array
