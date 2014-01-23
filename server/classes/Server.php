@@ -84,7 +84,7 @@ class Server
 					// remove client for $clients array
 					$found_socket = array_search($changed_socket, $this->clients);
 					socket_getpeername($changed_socket, $ip);
-					unset($clients[$found_socket]);
+					unset($this->clients[$found_socket]);
 		
 					//notify all users about disconnected connection
 					$response = $this->mask(json_encode(array('type'=>'system', 'message'=>$ip.' disconnected')));
