@@ -62,6 +62,15 @@ $(document).ready(function()
 			    var time = msg.time;
 				var type = msg.type;
 				var umsg = msg.message;
+				
+				if (umsg.length >= 75)
+				{
+				    var cut = umsg.substring(0, 75);
+				    var rest = umsg.substring(75);
+				
+				    umsg = cut + "<br />" + rest;    
+				}
+				
 				var uname = msg.name;
 				var ucolor = msg.color;
 				var clients = msg.clients;
