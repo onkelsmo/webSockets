@@ -26,7 +26,7 @@ class Server
 		//listen to port
 		socket_listen($this->socket);
 		//add listning socket to the list
-		$this->clients[] = $socket;
+		$this->clients[] = $this->socket;
 	}
 	
 	public function start()

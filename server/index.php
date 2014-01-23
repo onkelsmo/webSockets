@@ -11,6 +11,8 @@ require 'classes/Server.php';
 
 $server = new Server();
 
-var_dump($server);
+var_dump($server); 
+
+$server->start();
 
 ?>
