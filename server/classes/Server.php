@@ -31,6 +31,7 @@ class Server
 			$this->clients[] = $this->socket;
 			
 			echo "[Info]socket created\n";
+			Log::log();
 		}
 		catch (Exception $e)
 		{
