@@ -13,14 +13,16 @@ class Log
 	const TYPE_INFO = 'INFO';
 	const TYPE_ERROR = 'ERROR';
 	
-	private $method;
-	private $type;
-	private $message;
+	private static $method;
+	private static $type;
+	private static $message;
 	
 	public static function Log($method = self::METHOD_CONSOLE, $type = self::TYPE_INFO, $message = "")
 	{
 		$this->method = $method;
 		$this->type = $type;
 		$this->message = $message;
+		
+		dump("yy");
 	}
 }

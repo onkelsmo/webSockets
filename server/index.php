@@ -8,6 +8,7 @@
 *
 **/
 require 'classes/Server.php';
+require 'classes/Log.php';
 
 $server = new Server();
 
